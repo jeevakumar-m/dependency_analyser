@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dependency Analyzer - Result</title>
+</head>
+<body>
+    <h1>Dependency Analyzer - Result</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Group ID</th>
+                <th>Artifact ID</th>
+                <th>Old Version</th>
+                <th>New Version</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dependency in all_dependencies %}
+            <tr>
+                <td>{{ dependency.group_id }}</td>
+                <td>{{ dependency.artifact_id }}</td>
+                <td>{{ dependency.old_version }}</td>
+                <td>{{ dependency.new_version }}</td>
+                <td>{{ dependency.recommendation }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
